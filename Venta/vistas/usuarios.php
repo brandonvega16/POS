@@ -47,6 +47,11 @@ if (isset($_SESSION['usuario'])) {
                             <label for="exampleInputEmail1" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" name="password" id="password">
                         </div>
+
+                        <div class="mb-3">
+                            <input type="text" hidden class="form-control" name="nivel" id="nivel" value="Comun">
+                        </div> 
+
                         <span class="btn btn-primary btn-md entrar" id="registrar">Registrar</span>
                     </form>
                 </div>

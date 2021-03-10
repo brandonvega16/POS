@@ -41,7 +41,7 @@
           </ul>
         </li>
 
-        <?php if($_SESSION['usuario'] == "Admin"):?>
+        <?php if($_SESSION['nivel'] == "Admin"):?>
         <li class="nav-item">
           <a class="nav-link" href="usuarios.php"><i class="far fa-user"></i>  Usuarios</a>
         </li>
@@ -56,7 +56,7 @@
           <a class="nav-link" href="caja.php"><i class="fas fa-shopping-cart"></i> Caja</a>
         </li>
 
-        <?php if($_SESSION['usuario'] == "Admin"):?>  
+        <?php if($_SESSION['nivel'] == "Admin"):?>  
         <li class="nav-item">
           <a class="nav-link" href="reportes.php"><i class="far fa-file-alt"></i> Reportes</a>
         </li>

@@ -9,7 +9,8 @@
         $_POST['nombre'],
         $_POST['apellido'],
         $_POST['usuario'],
-        $_POST['password']
+        $_POST['password'],
+        $_POST['nivel']
     );
 
     $obj->registro($datos);

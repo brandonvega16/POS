@@ -8,7 +8,7 @@ class usuarios
         $conexion = $c->conexion();
         $fecha = date('Y-m-d');
 
-        $sql = "INSERT INTO usuarios (nombre, apellido, email, password, fechaCaptura) VALUES ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$fecha')";
+        $sql = "INSERT INTO usuarios (nombre, apellido, email, password, fechaCaptura, nivel) VALUES ('$datos[0]','$datos[1]','$datos[2]','$datos[3]','$fecha','$datos[4]')";
         return mysqli_query($conexion, $sql);
     }
 
@@ -18,6 +18,7 @@ class usuarios
         $conexion = $c->conexion();
         $_SESSION['usuario'] = $datos[0];
         $_SESSION['iduser'] = self::traerId($datos);
+        $_SESSION['nivel'] = self::traerNivel($datos);
 
         $sql = "SELECT * FROM usuarios WHERE email = '$datos[0]' AND password = '$datos[1]";
 
@@ -38,6 +39,18 @@ class usuarios
         $conexion = $c->conexion();
 
         $sql = "SELECT id_usuario from usuarios where email = '$datos[0]' and password = '$datos[1]'";
+
+        $result = mysqli_query($conexion, $sql);
+
+        return mysqli_fetch_row($result)[0];
+    }
+
+    public function traerNivel($datos)
+    {
+        $c = new conectar();
+        $conexion = $c->conexion();
+
+        $sql = "SELECT nivel from usuarios where email = '$datos[0]' and password = '$datos[1]'";
 
         $result = mysqli_query($conexion, $sql);
 

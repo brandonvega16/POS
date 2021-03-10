@@ -55,6 +55,8 @@
                             <!--<label class="etiquetas">Contraseña</label>-->
                             <input class="form-control input-sm campos" type="password" placeholder="Contraseña" name="password" id="password">
 
+                            <input class="form-control input-sm campos" type="text" hidden placeholder="Nivel" name="nivel" id="nivel" value="Admin">
+
                             <span class="btn btn-md entrar" id="registro">Registrar</span>
                             <a href="index.php" class="registro" style="text-decoration: none;">Login</a>
                             
