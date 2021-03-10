@@ -13,7 +13,7 @@ if (isset($_SESSION['usuario'])) {
         <link rel="stylesheet" href="../css/categoria.css">
         <link rel="stylesheet" href="../librerias/alertifyjs/css/alertify.css">
         <link rel="stylesheet" href="../librerias/alertifyjs/css/themes/default.css">
-        <link rel="stylesheet" href="../librerias/boostrap/css/bootstrap.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

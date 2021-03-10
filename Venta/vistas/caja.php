@@ -41,7 +41,6 @@ if (isset($_SESSION['usuario'])) {
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Seleccionar Cliente</label>
                 <select class="form-select" name="cliente" id="cliente">
-                    <option selected>Seleccionar</option>
                     <?php while ($ver = mysqli_fetch_row($result0)) : ?>
                         <option value="<?php echo $ver[0] ?>"><?php echo $ver[1] . " " . $ver[2] ?></option>
                     <?php endwhile; ?>

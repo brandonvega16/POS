@@ -6,12 +6,22 @@ body
     /*background: linear-gradient(360deg,#00537E 10%,#3AA17E 360%);*/
     /*font-family: 'Aclonica', sans-serif;*/
 }
-.logotipo
+
+
+.logo
 {
+    display:block;
+    margin:auto;
+    width: 50%;
     margin-top: 20px;
-    height: 60px;
-    display: block;
-    margin-left: 140px;
+    /*margin-left: 140px;*/
+}
+
+.empresa
+{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 15px;
 }
 
 .nombre

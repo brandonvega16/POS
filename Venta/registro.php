@@ -1,9 +1,10 @@
 <?php
     require_once "clases/conexion.php";
+    require_once "clases/consultas.php";
     $obj = new conectar();
     $conexion = $obj->conexion();
 
-    $sql = "select * from usuarios where email = 'admin'";
+    $sql = "select * from usuarios where nivel = 'Admin'";
     $result = mysqli_query($conexion,$sql);
     $validar = 0;
     if( mysqli_num_rows($result) > 0)
@@ -36,24 +37,34 @@
                     <p class="titulo">Registro de Usuarios</p>
                     </div>
                     <div class="panel panel-body">
-                        <p>
-                        <img class="logotipo" src="img/logo.png" alt="Logo Empresa">
-                        <p class="nombre">Nombre de la Empresa</p>
-                        </p>
+                    <?php
+                        while ($ver = mysqli_fetch_row($result3)) :
+                        ?>
+                            <div class="logotipo">
+                                <?php
+                                $imgVer = explode("/", $ver[1]);
+                                $imgRuta =  $imgVer[2] . "/" . $imgVer[3];
+                                ?>
+                                <img class="logo" src="<?php echo $imgRuta ?>" alt="Logo Empresa">
+                                <h4 class="empresa"><?php echo $ver[0] ?></h4>
+                            </div>
+                        <?php
+                        endwhile;
+                        ?>
 
                         <form class="formulario" id="frmRegistro" action="#" method="post">
 
                             <!--<label class="etiquetas">Nombre</label>-->
-                            <input class="form-control input-sm campos" type="text" placeholder="Nombre" name="nombre" id="nombre">
+                            <input class="form-control input-sm campos" type="text" placeholder="Nombre" name="nombre" id="nombre" required>
 
                             <!--<label class="etiquetas">Apellido</label>-->
-                            <input class="form-control input-sm campos" type="text" placeholder="Apellido" name="apellido" id="apellido">
+                            <input class="form-control input-sm campos" type="text" placeholder="Apellido" name="apellido" id="apellido" required>
 
                             <!--<label class="etiquetas">Correo (Usuario)</label>-->
-                            <input class="form-control input-sm campos" type="text" placeholder="Usuario" name="usuario" id="usuario">
+                            <input class="form-control input-sm campos" type="text" placeholder="Usuario" pattern="[A-Z]" name="usuario" id="usuario" required>
 
                             <!--<label class="etiquetas">Contraseña</label>-->
-                            <input class="form-control input-sm campos" type="password" placeholder="Contraseña" name="password" id="password">
+                            <input class="form-control input-sm campos" required type="password" pattern="[0-9-]{1,15}" placeholder="Contraseña (Digitos)" name="password" id="password">
 
                             <input class="form-control input-sm campos" type="text" hidden placeholder="Nivel" name="nivel" id="nivel" value="Admin">
 

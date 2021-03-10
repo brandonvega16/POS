@@ -1,9 +1,10 @@
 <?php
     require_once "clases/conexion.php";
+    require_once "clases/consultas.php";
     $obj = new conectar();
     $conexion = $obj->conexion();
 
-    $sql = "select * from usuarios where email = 'admin'";
+    $sql = "select * from usuarios where nivel = 'Admin'";
     $result = mysqli_query($conexion,$sql);
     $validar = 0;
     if( mysqli_num_rows($result) > 0)
@@ -36,21 +37,32 @@
                         <p class="titulo">Sistema de Ventas y Almacen</p>
                     </div>
                     <div class="panel panel-body">
-                        <p class="logo">
-                        <img class="logotipo" src="img/logo.png" alt="Logo Empresa">
-                        <p class="nombre">Nombre de la Empresa</p>
-                        </p>
+                    <?php
+                        while ($ver = mysqli_fetch_row($result3)) :
+                        ?>
+                            <div class="logotipo">
+                                <?php
+                                $imgVer = explode("/", $ver[1]);
+                                $imgRuta =  $imgVer[2] . "/" . $imgVer[3];
+                                ?>
+                                <img class="logo" src="<?php echo $imgRuta ?>" alt="Logo Empresa">
+                                <h4 class="empresa"><?php echo $ver[0] ?></h4>
+                            </div>
+                        <?php
+                        endwhile;
+                        ?>
 
                         <form class="formulario" id="frmLogin" action="#" method="post">
                             <!--<label class="etiquetas">Usuario</label>-->
                             <input class="form-control input-sm campos" type="text" placeholder="Usuario" name="usuario" id="usuario">
 
                             <!--<label class="etiquetas">Contraseña</label>-->
-                            <input class="form-control input-sm campos" type="password" placeholder="Contraseña" name="password" id="password">
+                            <input class="form-control input-sm campos" type="password" pattern="[0-9-]{1,15}" placeholder="Contraseña (Digitos)" name="password" id="password">
 
                             <span class="btn btn-md entrar" id="entrar">Entrar</span>
                             <?php if(!$validar) : ?>
                             <a href="registro.php" class=" registro" style="text-decoration: none;" >Registrar</a>
+                            <a href="empresa.php" class=" registro" style="text-decoration: none;" >Registrar Empresa</a>
                             <?php endif; ?>
                             <br>
                         </form>

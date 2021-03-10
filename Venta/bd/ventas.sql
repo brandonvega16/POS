@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2021 a las 01:55:35
+-- Tiempo de generación: 10-03-2021 a las 22:47:59
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -73,6 +73,18 @@ CREATE TABLE `clientes` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `empresa`
+--
+
+CREATE TABLE `empresa` (
+  `Id` int(10) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `logo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `imagenes`
 --
 
@@ -111,6 +123,7 @@ CREATE TABLE `ventas` (
   `id_cliente` int(11) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
+  `cantidad` int(11) NOT NULL,
   `precio` float DEFAULT NULL,
   `fechaCompra` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -136,6 +149,12 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id_cliente`);
+
+--
+-- Indices de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `imagenes`
@@ -170,6 +189,12 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `clientes`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `imagenes`

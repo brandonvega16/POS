@@ -49,8 +49,12 @@ if (isset($_SESSION['usuario'])) {
                         </div>
 
                         <div class="mb-3">
-                            <input type="text" hidden class="form-control" name="nivel" id="nivel" value="Comun">
-                        </div> 
+                            <label for="exampleInputEmail1" class="form-label">Seleccionar Nivel</label>
+                            <select class="form-select" name="categoria" id="categoria">                                 
+                            <option value="Comun">Usuario Comun</option>
+                            <option value="Admin">Usuario Admin</option>
+                            </select>
+                        </div>
 
                         <span class="btn btn-primary btn-md entrar" id="registrar">Registrar</span>
                     </form>

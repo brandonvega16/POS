@@ -74,4 +74,14 @@ class usuarios
         $sql = "DELETE FROM usuarios WHERE id_usuario = '$datos'";
         return mysqli_query($conexion, $sql);
     }
+
+    public function imagen($datos)
+    {
+        $c = new conectar();
+        $conexion = $c->conexion();
+
+        $sql = "INSERT INTO empresa (nombre,logo) VALUES ('$datos[0]', '$datos[1]')";
+        $result = mysqli_query($conexion,$sql);
+        return mysqli_insert_id($conexion);
+    }
 }

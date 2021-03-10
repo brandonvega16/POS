@@ -40,21 +40,26 @@ class ventas
         $datos = $_SESSION['tablaComprasTemp'];
         $idusuario = $_SESSION['iduser'];
         $r = 0;
+        $total =0;
 
         for ($i = 0; $i < count($datos); $i++) {
             $d = explode("||", $datos[$i]);
+            $final = $d[3] * $d[5];
+ 		    $total=$total + $final;
 
             $sql = "INSERT into ventas (id_venta,
 										id_cliente,
 										id_producto,
 										id_usuario,
+                                        cantidad,
 										precio,
 										fechaCompra)
 							values ('$idventa',
 									'$d[6]',
 									'$d[0]',
 									'$idusuario',
-									'$d[3]',
+                                    '$d[5]',
+									'$total',
 									'$fecha')";
             $r = $r + $result = mysqli_query($conexion, $sql);
         }
@@ -91,7 +96,7 @@ class ventas
 
         $ver = mysqli_fetch_row($result);
 
-        return $ver[0] . " " . $ver[1];
+        return $ver[1] . " " . $ver[0];
     }
 
     public function obtenerTotal($idventa)
