@@ -1,0 +1,85 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');*/
+
+body
+{
+    background: -webkit-linear-gradient(360deg,#051937, #004d7a, #008793, #00bf72 );
+    /*background: linear-gradient(360deg,#00537E 10%,#3AA17E 360%);*/
+    /*font-family: 'Aclonica', sans-serif;*/
+}
+.logotipo
+{
+    margin-top: 20px;
+    height: 60px;
+    display: block;
+    margin-left: 140px;
+}
+
+.nombre
+{
+    text-align: center;
+}
+
+.panel-heading
+{
+    text-align: center;
+    background-color: #1FBBEF;
+    height: 40px;
+    border-radius: 5%;
+    padding-top: 10px;
+}
+
+.titulo
+{
+    color: #fff;
+}
+
+.panel-primary
+{
+    background-color: #fff;
+    border-radius: 5%;
+    
+}
+
+.formulario
+{
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.campos
+{
+    margin-top: 10px;
+}
+
+.entrar
+{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: block;
+    background-color: #0DCFC3;
+    color: #fff;
+}
+
+.entrar:hover
+{
+    color: #00537E;
+}
+
+.registro
+{
+    margin-top: 30px;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.login
+{
+    margin-top: 30px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 20px;
+}
